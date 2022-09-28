@@ -1,0 +1,35 @@
+<div class="container text-center">
+  <h1>{{ title }}</h1>
+</div>
+<div class="container">
+  <div class="row">
+  <button (click)="openModal()">Add Book</button>
+    <app-book-modal #modal></app-book-modal>
+    <div class="search-book">
+      <input
+        class="form-control"
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="Start searching for a hero by id or name or country"
+      />
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Book Name</th>
+          <th>Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books | filter: searchText">
+          <td>{{ book.id }}</td>
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
