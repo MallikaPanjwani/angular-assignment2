@@ -3,7 +3,7 @@
 </div>
 <div class="container">
   <div class="row">
-  <button (click)="openModal()">Add Book</button>
+    <button (click)="openModal()">Add Book</button>
     <app-book-modal #modal></app-book-modal>
     <div class="search-book">
       <input
@@ -27,9 +27,9 @@
       <tbody>
         <tr *ngFor="let book of books | filter: searchText">
           <td>{{ book.id }}</td>
-          <td>{{ book.name }}</td>
+          <td>{{ book.name | titlecase }}</td>
           <td>{{ book.author }}</td>
-          <td>{{ book.date }}</td>
+          <td>{{ book.date | date: 'fullDate' }}</td>
         </tr>
       </tbody>
     </table>

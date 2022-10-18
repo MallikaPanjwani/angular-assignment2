@@ -18,7 +18,7 @@ export class AppComponent {
   books = [
     {
       id: 11,
-      name: 'The India Story',
+      name: 'the india story',
       author: 'Bimal Jalal',
       date: '20 Jun 2022',
     },
